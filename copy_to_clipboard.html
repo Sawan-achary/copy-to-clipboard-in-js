@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <div id="inputfield">
+        <label for="input">Enter the text:</label>
+        <input type="text" id="myInput">
+        <!-- <button onclick="myFunction()">Copy text</button> -->
+        <div id="icondiv">
+            <img src="copy-icon.png" id="icon" alt="copy_icon" onclick="clickfunc()">
+        </div>
+        </div>
+    </div>
+</body>
+<script>
+    function clickfunc()
+    {
+        let text=document.getElementById("myInput").value;
+        console.log(text);
+        console.log(text.length);
+        navigator.clipboard.writeText(text);
+        if(text.length== 0)
+        {
+            alert("nothing to copy")
+        }
+        else{
+            alert("coppied")
+        }
+    }
+</script>
+</html>
